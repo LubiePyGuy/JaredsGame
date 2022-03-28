@@ -3,4 +3,48 @@ This is a grid based battle game, where you make a world then battle enemies.
 How it works:
   Map: There is a voxel based map, like minecraft, where you can layout blocks. These blocks can be various types, such as rock.
   Character: You are a character who can move around the map, and shoot enemies. You can only move up, down, left or right. When you shoot, you only shoot directly forward from your current location. The charater looks like a box.
-  Enemies: Enemies can move around the map to try and position themselves so they can shoot you. When you shoot an enemy, they loose one of their lives. They have 3 lives to start. When they have 3 lives, they are green... when they have 2 lives they are yellow, and with 1 life left they are red. They are a circle shape.
+  Enemies: Enemies can move around the map to try and position themselves so they can shoot you. When you shoot an enemy, they loose one of their lives. They have 3 lives to start. When they have 3 lives, they are green... when they have 2 lives they are yellow, and with 1 life left they are red. They are a circle shape.Enimies can fight other enimies. 
+  Blocks: To start, blocks are just squares. You can break them with bullets. Just 1 shot destroys them and they disappear. Enemies can shoot blocks and destroy them too.
+  Moving: The max speed anyone can move is 3 blocks per second
+  Bullets: Bullets shoot infinite speed and distance. Reload time is .5 seconds.
+  Camera: Camera is overhead, and zoomed out to show about 10x10 blocks.
+  Enemy movement: enemies try to move towards you. If they are within a radius of 4 blocks, they will shoot at you.
+  
+  
+World Generation:
+ -Create a 100 x 100 voxel grid
+ -Place blocks randomly with 10% fill factor
+ -Place 2 enemies randomly in grid
+ -Place character in middle of grid
+ If any existing entitiy already exists in grid, then overwrite them
+ 
+Enemy AI:
+  1 - Turn Logic:
+    Turn towards the closest column or row that contains the human character
+  2 - Move Logic:
+    Move 1 step towards the character if more than 4 steps aways from human character
+  3 - Shoot Logic:
+    Shoot at character if within 4 steps and have bullets
+  4 - Reload Logic:
+    Wait .5 seconds for reload
+  5 - Health Logic:
+    If hit by human, reduce health 
+  6 - Rendering Logic:
+    Display as a circle, change rendering color to match health status.
+  
+Human Logic:
+  1 - Turn Logic:
+  2 - Move Logic:
+  3 - Shoot Logic:
+  4 - Reload Logic:
+  5 - Health Logic:
+  6 - Rendering Logic:
+  
+Blocks:
+  1 - Health Logic:
+  2 - Rendering Logic:
+  
+End of Game Logic:
+  1 - Enemies all destroyed
+  2 - Human destroyed
+  
