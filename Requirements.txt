@@ -1,0 +1,5 @@
+This is a grid based battle game, where you make a world then battle enemies.
+
+How it works:
+  Map: There is a voxel based map, like minecraft, where you can layout blocks. These blocks can be various types, such as rock.
+  Character: You are a character who can move around the map, and shoot enemies. You can only move up, down, left or right. When you shoot, you only shoot directly forward from your current location.
