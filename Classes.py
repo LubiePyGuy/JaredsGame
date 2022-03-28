@@ -38,11 +38,16 @@ class World(object):
     yLength = 0  
     nEnemies = 0
     entities = []
+    character = None
+    enemies = []
+    
     
     def __init__(self, xlen, ylen):
         self.xLength = xlen
         self.yLength = ylen
         self.nEnemies = 2
+        self.character = Entity("Character", randint(0, xlen-1), randint(0, ylen-1))
+        
     
     def generateMap(self):
         print ("X len:", self.xLength)
@@ -54,15 +59,18 @@ class World(object):
                     self.entities.append(Entity("Stone", x, y))
                     
         #Create Character
-        self.entities.append(Entity("Character", randint(0, self.xLength-1), randint(0, self.yLength-1)))
+        # self.entities.append()
         
         #Create Enemies
         for n in range(self.nEnemies):
-            self.entities.append(Entity("Enemy", randint(0, self.xLength-1), randint(0, self.yLength-1)))
-        
+            self.enemies.append(Entity("Enemy", randint(0, self.xLength-1), randint(0, self.yLength-1)))
+            
         
     def printEntities(self):
         for entity in self.entities:
+            print(entity)
+        print(self.character)
+        for entity in self.enemies:
             print(entity)
         
 if __name__ == "__main__":
