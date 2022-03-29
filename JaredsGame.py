@@ -6,7 +6,7 @@ Created on Mon Mar 28 13:25:28 2022
 """
 
 import Classes
-import myscript
+
 import tkinter 
 import time
 from random import random
